@@ -19,7 +19,7 @@
 
         <variable
             name="user"
-            type="ObservableMap&lt;String, Object>" />
+            type="com.souban.databinding.User" />
 
         <import type="android.databinding.ObservableArrayList" />
 
@@ -38,28 +38,34 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:onClick="@{presenter.onContainerClick}"
-            android:text='@{user["firstName"]}' />
+            android:text='@{user.firstName}' />
 
         <TextView
             android:id="@+id/text1"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:onClick="@{presenter.onContainerClick}"
-            android:text='@{user["lastName"]}' />
+            android:text='@{user.lastName}' />
 
         <TextView
             android:id="@+id/text2"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:onClick="@{presenter.onContainerClick}"
-            android:text='@{String.valueOf(user["age"])}' />
+            android:text="ceshi" />
 
         <TextView
             android:id="@+id/text3"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:onClick="@{(view) -> presenter.onItemClick(view, user)}"
             android:text='@{String.valueOf(user1[2])}' />
+
+        <!--双向绑定-->
+        <EditText
+            android:id="@+id/edit_text"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:text="@={user.lastName}" />
 
         <include
             layout="@layout/item_list_room"

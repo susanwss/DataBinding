@@ -6,6 +6,14 @@
         <variable
             name="name"
             type="String" />
+
+        <variable
+            name="item"
+            type="com.souban.databinding.User" />
+
+        <variable
+            name="presenter"
+            type="com.souban.databinding.ClickClass" />
     </data>
 
     <LinearLayout
@@ -15,8 +23,20 @@
 
         <TextView
             android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="@{item.firstName}" />
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{name}" />
+            android:onClick="@{presenter.onContainerClick}"
+            android:src="@mipmap/icon_change"
+            android:tint="@color/colorAccent" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
     </LinearLayout>
 
 </layout>
